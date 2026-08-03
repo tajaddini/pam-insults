@@ -1,0 +1,8 @@
+# One insult per line. Blank lines and #comments are ignored.
+That password was so wrong it filed its own bug report.
+Close, but no. Actually, not close at all.
+Have you considered writing it down? On paper? Like an adult?
+Wrong. Try using the keyboard next time.
+Your fingers and your brain are not currently on speaking terms.
+I have seen better passwords in a database breach.
+Nope. Would you like a hint? Too bad.
