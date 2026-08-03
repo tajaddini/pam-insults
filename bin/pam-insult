@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Print one random line from one random *.txt file in the given directory.
+# Invoked by pam_exec.so during a failed authentication.
+# Fails open: always exits 0, never writes to stderr.
+
+dir="${1:-/usr/local/share/insults}"
+
+[[ -d "$dir" ]] || exit 0
+
+shopt -s nullglob
+files=("$dir"/*.txt)
+(( ${#files[@]} )) || exit 0
+
+file="${files[RANDOM % ${#files[@]}]}"
+
+# Skip blank lines and comments.
+mapfile -t lines < <(grep -vE '^[[:space:]]*(#|$)' -- "$file" 2>/dev/null)
+(( ${#lines[@]} )) || exit 0
+
+printf '%s\n' "${lines[RANDOM % ${#lines[@]}]}"
+exit 0
