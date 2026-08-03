@@ -1,0 +1,8 @@
+Name: Random insult on authentication failure
+Default: yes
+Priority: 0
+Auth-Type: Primary
+Auth:
+	[default=ignore]	pam_exec.so stdout quiet /usr/local/bin/pam-insult /usr/local/share/insults
+Auth-Initial:
+	[default=ignore]	pam_exec.so stdout quiet /usr/local/bin/pam-insult /usr/local/share/insults
