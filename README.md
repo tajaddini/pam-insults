@@ -40,8 +40,13 @@ git clone https://github.com/tajaddini/pam-insults.git
 cd pam-insults
 sudo ./install.sh
 ```
-
 the installation script copies the files, sets ownership/permissions, and runs `pam-auth-update --force`.
+
+> Make both scripts executable before committing, so a fresh clone works without a `chmod`:
+> ```bash
+> chmod +x install.sh uninstall.sh bin/pam-insult
+> git add -A && git commit -m "PAM-based random insults on auth failure"
+> ```
 
 ### ⚠️ Do this before you test
 
